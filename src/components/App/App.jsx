@@ -7,10 +7,17 @@ import {
   TodoList,
   Filter,
 } from 'components';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTodos } from 'redux/operations';
 import { selectTodos } from 'redux/selectors';
 export const App = () => {
   const todos = useSelector(selectTodos);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTodos());
+  }, [dispatch]);
 
   return (
     <>

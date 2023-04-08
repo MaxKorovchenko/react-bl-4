@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { FormBtn, InputSearch, SearchFormStyled } from './SearchForm.styled';
-import { addTodo } from 'redux/todoSlice';
+import { addTodo } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import { nanoid } from 'nanoid';
 import { selectTodos } from '../../redux/selectors';
 export const SearchForm = () => {
   const [query, setQuery] = useState('');
@@ -22,7 +21,6 @@ export const SearchForm = () => {
       return;
     }
     const todo = {
-      id: nanoid(),
       text: query,
     };
     dispatch(addTodo(todo));
