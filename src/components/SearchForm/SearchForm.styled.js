@@ -7,7 +7,7 @@ export const SearchFormStyled = styled.form`
 
   position: relative;
 
-  margin-bottom: ${({ theme }) => theme.spacing(20)};
+  margin-bottom: ${({ theme }) => theme.spacing(10)};
 `;
 
 export const InputSearch = styled.input`
