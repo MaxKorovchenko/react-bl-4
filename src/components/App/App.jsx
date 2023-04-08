@@ -8,9 +8,9 @@ import {
   Filter,
 } from 'components';
 import { useSelector } from 'react-redux';
-
+import { selectTodos } from 'redux/selectors';
 export const App = () => {
-  const todos = useSelector(state => state.todos.items);
+  const todos = useSelector(selectTodos);
 
   return (
     <>
@@ -18,7 +18,7 @@ export const App = () => {
       <Section>
         <Container>
           <SearchForm />
-          <Filter/>
+          <Filter />
           {todos.length === 0 ? (
             <Text textAlign="center">There are no any todos ... </Text>
           ) : (
