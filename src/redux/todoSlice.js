@@ -7,7 +7,9 @@ const todoSlice = createSlice({
     addTodo(state, action) {
       state.items = [...state.items, action.payload];
     },
-    deleteTodo(state, action) {},
+    deleteTodo(state, action) {
+      state.items = state.items.filter(item => item.id !== action.payload);
+    },
   },
 });
 
